@@ -23,10 +23,11 @@ const settings ={
 }
 
 // start the game
-start.addEventListener('click', () => { 
+start.addEventListener('click', event => { 
     start.classList.add('hide');
     settings.start= true;
     area.appendChild(car);
+    settings.x = car.offsetLeft;
     requestAnimationFrame(playGame);
 });
 
@@ -34,18 +35,31 @@ start.addEventListener('click', () => {
 function playGame(){
     console.log('play');
     if(settings.start){
+        if(keys.ArrowLeft){
+            settings.x--;
+            console.log('left');
+        }
+        if(keys.ArrowRight){
+            settings.x++;
+            console.log('right')
+        }
+
+        //
+        car.style.left = settings.x+'px';
          requestAnimationFrame(playGame);
     }
 }
 
 function startRunCar(event){ 
     event.preventDefault();
-    keys[event.keys]= true;    
+    keys[event.code]= true;  
+    console.log(event)  
 }
 
 function stopRunCar(event){
     event.preventDefault();
-    keys[event.keys]= false;
+    keys[event.code]= false;
+    console.log(event)  
 }
 
 //
