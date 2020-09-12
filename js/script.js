@@ -7,6 +7,10 @@ const area = document.querySelector('.game__area');
 const car = document.createElement('div');
 car.classList.add('car');
 
+// 
+const $manageLeft = document.querySelector('.game__left');
+const $manageRight = document.querySelector('.game__right');
+
 //
 const keys = {
     ArrowUp: false,
@@ -70,8 +74,7 @@ function playGame(){
         settings.score += settings.speed;
         score.textContent= 'SCORE:'+settings.score;
         if(keys.ArrowLeft && settings.x > 0){
-            settings.x-= settings.speed;
-  
+            settings.x-= settings.speed; 
         }
       
         if(keys.ArrowRight  && settings.x <(area.offsetWidth - car.offsetWidth)){
@@ -148,4 +151,26 @@ function moveEnemy(){
 
 //
 document.addEventListener('keydown', startRunCar);
-document.addEventListener('keyup', stopRunCar)
+document.addEventListener('keyup', stopRunCar);
+
+$manageLeft.addEventListener('touchstart',()=>{
+    if(settings.start){       
+       
+        if( settings.x > 0){
+            settings.x-= settings.speed+5; 
+        }     
+        
+    }
+});
+
+$manageRight.addEventListener('touchstart',() => {
+
+    if(settings.start){       
+       
+        if( settings.x > 0){
+            settings.x+= settings.speed+5; 
+        }     
+        
+    }
+
+});

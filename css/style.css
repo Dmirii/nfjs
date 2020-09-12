@@ -64,8 +64,9 @@ table {
 }
 
 .game__area{
-    width: 300px;
-    height: 99vh; 
+    max-width: 300px;
+    width: 90vw;
+    height: 90vh; 
     position: relative;
     margin: auto;
     background: #222;
@@ -93,9 +94,28 @@ table {
     background:black;
     cursor: pointer;
     font-family: sans-serif;
+}
 
-
-
+.game__manage{
+    padding-top: 2vh;
+    display: flex;
+    justify-content: space-around;
+}
+.game__left{
+    background: skyblue;
+    height: 6vh;
+    width: 45vw;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 24px;
+}
+.game__right{
+    background: skyblue;;
+    height: 6vh;
+    width: 45vw;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 24px;
 }
 
 .score{
