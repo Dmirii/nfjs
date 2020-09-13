@@ -153,7 +153,7 @@ function moveEnemy(){
 document.addEventListener('keydown', startRunCar);
 document.addEventListener('keyup', stopRunCar);
 
-$manageLeft.addEventListener('touchstart',()=>{
+$manageLeft.addEventListener('click',()=>{
     if(settings.start){       
        
         if( settings.x > 0){
@@ -163,7 +163,7 @@ $manageLeft.addEventListener('touchstart',()=>{
     }
 });
 
-$manageRight.addEventListener('touchstart',() => {
+$manageRight.addEventListener('click',() => {
 
     if(settings.start){       
        
